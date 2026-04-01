@@ -44,52 +44,52 @@ export default function Gallery() {
               
               {/* Image 1: Main Group */}
               <div className="col-span-4 row-span-4 relative rounded-[2rem] overflow-hidden border-2 border-black">
-                <Image src="/gallery/1.jpg" alt="Organizing Team" fill className="object-cover" />
+                <Image src="/gallery/1.JPG" alt="Organizing Team" fill className="object-cover" />
               </div>
 
               {/* Image 3: Lab Session */}
               <div className="col-span-3 row-span-4 relative rounded-[1.5rem] overflow-hidden border-2 border-black">
-                <Image src="/gallery/3.jpg" alt="ISE Lab session" fill className="object-cover" />
+                <Image src="/gallery/3.JPG" alt="ISE Lab session" fill className="object-cover" />
               </div>
 
               {/* Image 5: Gaming */}
               <div className="col-span-5 row-span-3 relative rounded-[2rem] overflow-hidden border-2 border-black">
-                <Image src="/gallery/5.jpg" alt="Gaming competition" fill className="object-cover" />
+                <Image src="/gallery/5.JPG" alt="Gaming competition" fill className="object-cover" />
               </div>
 
               {/* Image 4: Laptop Detail */}
               <div className="col-span-5 row-span-2 relative rounded-[1.5rem] overflow-hidden border-2 border-black">
-                <Image src="/gallery/4.jpg" alt="Development" fill className="object-cover" />
+                <Image src="/gallery/4.JPG" alt="Development" fill className="object-cover" />
               </div>
 
               {/* Image 7: Wide Group (Center Anchor) */}
               <div className="col-span-6 row-span-3 relative rounded-[2rem] overflow-hidden border-2 border-black">
-                <Image src="/gallery/7.jpg" alt="Catalysis Event Group" fill className="object-cover" />
+                <Image src="/gallery/7.JPG" alt="Catalysis Event Group" fill className="object-cover" />
               </div>
 
               {/* Image 6: Lab Overview */}
               <div className="col-span-3 row-span-3 relative rounded-[1.5rem] overflow-hidden border-2 border-black">
-                <Image src="/gallery/6.jpg" alt="Lab Overview" fill className="object-cover" />
+                <Image src="/gallery/6.JPG" alt="Lab Overview" fill className="object-cover" />
               </div>
 
               {/* Image 2: Team Backs */}
               <div className="col-span-3 row-span-3 relative rounded-[1.5rem] overflow-hidden border-2 border-black">
-                <Image src="/gallery/2.jpg" alt="Team Genesis" fill className="object-cover" />
+                <Image src="/gallery/2.JPG" alt="Team Genesis" fill className="object-cover" />
               </div>
 
               {/* Image 8: Student Focus */}
               <div className="col-span-3 row-span-3 relative rounded-[1.5rem] overflow-hidden border-2 border-black">
-                <Image src="/gallery/8.jpg" alt="Focused student" fill className="object-cover" />
+                <Image src="/gallery/8.JPG" alt="Focused student" fill className="object-cover" />
               </div>
 
               {/* Image 10: Collaboration */}
               <div className="col-span-3 row-span-3 relative rounded-[1.5rem] overflow-hidden border-2 border-black">
-                <Image src="/gallery/10.jpg" alt="Collaboration" fill className="object-cover" />
+                <Image src="/gallery/10.JPG" alt="Collaboration" fill className="object-cover" />
               </div>
 
               {/* Image 9: Steps Discussion (Now integrated as a side block) */}
               <div className="col-span-6 row-span-3 relative rounded-[2rem] overflow-hidden border-2 border-black">
-                <Image src="/gallery/9.jpg" alt="Discussions" fill className="object-cover" />
+                <Image src="/gallery/9.JPG" alt="Discussions" fill className="object-cover" />
               </div>
           </div>
 
