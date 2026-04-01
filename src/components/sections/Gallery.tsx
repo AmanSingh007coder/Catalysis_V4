@@ -9,10 +9,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const images = [
-  "/gallery/1.jpg", "/gallery/2.jpg", "/gallery/3.jpg", 
-  "/gallery/4.jpg", "/gallery/5.jpg", "/gallery/6.jpg", 
-  "/gallery/7.jpg", "/gallery/8.jpg", "/gallery/9.jpg",
-  "/gallery/10.jpg", "/gallery/11.jpg"
+  "/gallery/1.JPG", "/gallery/2.JPG", "/gallery/3.JPG", 
+  "/gallery/4.JPG", "/gallery/5.JPG", "/gallery/6.JPG", 
+  "/gallery/7.JPG", "/gallery/8.JPG", "/gallery/9.JPG",
+  "/gallery/10.JPG"
 ];
 
 export default function Gallery() {
@@ -40,42 +40,57 @@ export default function Gallery() {
               Explore a detailed look at our past events and experience the vibrant energy that truly defines Catalysis, showcasing the passion and innovation that drive our community forward.
             </p>
           </div>
+          <div className="hidden md:grid grid-cols-12 auto-rows-[70px] gap-3">
+              
+              {/* Image 1: Main Group */}
+              <div className="col-span-4 row-span-4 relative rounded-[2rem] overflow-hidden border-2 border-black">
+                <Image src="/gallery/1.jpg" alt="Organizing Team" fill className="object-cover" />
+              </div>
 
-          <div className="hidden md:grid grid-cols-12 auto-rows-[100px] gap-4">
-            
-            <div className="col-span-2 row-span-3 relative rounded-[2rem] overflow-hidden border-2 border-black">
-              <Image src="/gallery/1.jpg" alt="Past event" fill className="object-cover" />
-            </div>
-            <div className="col-span-2 row-span-2 relative rounded-[2rem] overflow-hidden border-2 border-black mt-[-40px]">
-              <Image src="/gallery/2.jpg" alt="Coding session" fill className="object-cover" />
-            </div>
+              {/* Image 3: Lab Session */}
+              <div className="col-span-3 row-span-4 relative rounded-[1.5rem] overflow-hidden border-2 border-black">
+                <Image src="/gallery/3.jpg" alt="ISE Lab session" fill className="object-cover" />
+              </div>
 
-            <div className="col-span-2 row-span-4 relative rounded-[2rem] overflow-hidden border-2 border-black">
-              <Image src="/gallery/3.jpg" alt="Workshop" fill className="object-cover" />
-            </div>
+              {/* Image 5: Gaming */}
+              <div className="col-span-5 row-span-3 relative rounded-[2rem] overflow-hidden border-2 border-black">
+                <Image src="/gallery/5.jpg" alt="Gaming competition" fill className="object-cover" />
+              </div>
 
-            <div className="col-span-4 row-span-5 relative rounded-[3rem] overflow-hidden border-2 border-black">
-              <Image src="/gallery/4.jpg" alt="Team collab" fill className="object-cover" />
-            </div>
+              {/* Image 4: Laptop Detail */}
+              <div className="col-span-5 row-span-2 relative rounded-[1.5rem] overflow-hidden border-2 border-black">
+                <Image src="/gallery/4.jpg" alt="Development" fill className="object-cover" />
+              </div>
 
-            <div className="col-span-2 row-span-4 relative rounded-[2rem] overflow-hidden border-2 border-black">
-              <Image src="/gallery/5.jpg" alt="Presenting" fill className="object-cover" />
-            </div>
+              {/* Image 7: Wide Group (Center Anchor) */}
+              <div className="col-span-6 row-span-3 relative rounded-[2rem] overflow-hidden border-2 border-black">
+                <Image src="/gallery/7.jpg" alt="Catalysis Event Group" fill className="object-cover" />
+              </div>
 
-            <div className="col-span-3 row-span-3 relative rounded-[2rem] overflow-hidden border-2 border-black mt-[-100px]">
-              <Image src="/gallery/6.jpg" alt="Focus" fill className="object-cover" />
-            </div>
+              {/* Image 6: Lab Overview */}
+              <div className="col-span-3 row-span-3 relative rounded-[1.5rem] overflow-hidden border-2 border-black">
+                <Image src="/gallery/6.jpg" alt="Lab Overview" fill className="object-cover" />
+              </div>
 
-            <div className="col-span-5 row-span-3 relative rounded-[3rem] overflow-hidden border-2 border-black mt-[-100px]">
-              <Image src="/gallery/7.jpg" alt="Workspace" fill className="object-cover" />
-            </div>
+              {/* Image 2: Team Backs */}
+              <div className="col-span-3 row-span-3 relative rounded-[1.5rem] overflow-hidden border-2 border-black">
+                <Image src="/gallery/2.jpg" alt="Team Genesis" fill className="object-cover" />
+              </div>
 
-            <div className="col-span-2 row-span-2 relative rounded-[2rem] overflow-hidden border-2 border-black mt-[-100px]">
-              <Image src="/gallery/8.jpg" alt="Networking" fill className="object-cover" />
-            </div>
-            <div className="col-span-2 row-span-2 relative rounded-[2rem] overflow-hidden border-2 border-black mt-[-100px]">
-              <Image src="/gallery/9.jpg" alt="Tech setup" fill className="object-cover" />
-            </div>
+              {/* Image 8: Student Focus */}
+              <div className="col-span-3 row-span-3 relative rounded-[1.5rem] overflow-hidden border-2 border-black">
+                <Image src="/gallery/8.jpg" alt="Focused student" fill className="object-cover" />
+              </div>
+
+              {/* Image 10: Collaboration */}
+              <div className="col-span-3 row-span-3 relative rounded-[1.5rem] overflow-hidden border-2 border-black">
+                <Image src="/gallery/10.jpg" alt="Collaboration" fill className="object-cover" />
+              </div>
+
+              {/* Image 9: Steps Discussion (Now integrated as a side block) */}
+              <div className="col-span-6 row-span-3 relative rounded-[2rem] overflow-hidden border-2 border-black">
+                <Image src="/gallery/9.jpg" alt="Discussions" fill className="object-cover" />
+              </div>
           </div>
 
           <div className="md:hidden w-full">
@@ -91,7 +106,7 @@ export default function Gallery() {
             >
               {images.map((src, i) => (
                 <SwiperSlide key={i}>
-                  <div className="relative aspect-[4/5] w-full rounded-[2.5rem] overflow-hidden border-2 border-black">
+                  <div className="relative aspect-[4/5] w-full rounded-[1.2rem] overflow-hidden border-2 border-black">
                     <Image src={src} alt={`Gallery ${i}`} fill className="object-cover" />
                   </div>
                 </SwiperSlide>
