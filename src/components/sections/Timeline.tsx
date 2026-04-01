@@ -126,14 +126,12 @@ export default function Timeline() {
 
          <div className="flex flex-col justify-start lg:pt-2 max-w-lg">
 
-          {/* Timeline Label */}
           <div className="mb-4">
             <span className="px-6 py-2 text-sm border border-black rounded-full bg-white font-medium">
               TIMELINE
             </span>
           </div>
 
-          {/* Heading Image */}
           <div className="mb-6">
             <Image
               src="/timeline-heading.png"
@@ -145,7 +143,6 @@ export default function Timeline() {
             />
           </div>
 
-          {/* Description */}
           <p className="text-[#3b0a1e] font-medium text-sm md:text-xl leading-relaxed max-w-xl -mb-8 md:mb-10">
             Embarking on the path to becoming a true champion is a profound and
             transformative journey that starts at this very moment, filled with
@@ -155,7 +152,6 @@ export default function Timeline() {
 
         </div>
 
-          {/* Mobile/Tablet: Day tabs + single column */}
           <div className="lg:hidden">
             <div className="flex gap-3 mb-6">
               {dayLabels.map((label, i) => (
@@ -219,7 +215,6 @@ export default function Timeline() {
             </div>
           </div>
 
-          {/* Desktop: Full 3-column grid with time labels */}
           <div className="hidden lg:flex gap-6">
             <div className="flex flex-col justify-between mt-25 text-sm text-gray-600 pr-2">
               {[

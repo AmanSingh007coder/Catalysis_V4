@@ -79,7 +79,6 @@ export default function Gallery() {
       <Container>
         <div className="rounded-[3rem] p-10 md:p-20 border-2 border-black bg-[#FAF7ED] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden">
 
-          {/* HEADER */}
           <div className="flex flex-col items-center text-center mb-16">
             
             <div className="inline-block border-2 border-black rounded-full px-7 py-2 bg-white text-sm md:text-base font-semibold mb-8">
@@ -101,14 +100,12 @@ export default function Gallery() {
             </p>
           </div>
 
-          {/* Desktop */}
           <div className="hidden md:flex flex-col gap-5">
             <DesktopRow images={imagesRow1} reverse={true} />
             <DesktopRow images={imagesRow2} reverse={false} />
             <DesktopRow images={imagesRow3} reverse={true} />
           </div>
 
-          {/* Mobile (UNCHANGED) */}
           <div className="md:hidden w-full">
             <Swiper
               modules={[Autoplay, Pagination]}
