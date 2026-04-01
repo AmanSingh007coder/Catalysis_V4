@@ -53,11 +53,11 @@ function AboutLeft() {
   return (
     <div className="flex flex-col items-center lg:items-start text-center lg:text-left z-10">
       <div className="mb-6">
-        <Image 
-          src="/about/about-us.png" 
-          alt="About Us heading" 
-          width={120} 
-          height={40} 
+        <Image
+          src="/about/about-us.png"
+          alt="About Us heading"
+          width={120}
+          height={40}
           className="h-auto"
         />
       </div>
@@ -72,10 +72,14 @@ function AboutLeft() {
       </div>
       <div className="space-y-6 text-[#3b0a1e] text-lg font-medium leading-relaxed max-w-xl">
         <p>
-          Catalysis is not just an event, it&apos;s a platform designed to spark innovation and accelerate ideas into reality. Over the course of three days, participants will engage in multiple events ranging from technical challenges to creative competitions.
+          Catalysis is not just an event, it&apos;s a platform designed to spark
+          innovation and accelerate ideas into reality. Over the course of three
+          days, participants will engage in multiple events ranging from technical
+          challenges to creative competitions.
         </p>
         <p>
-          Catalysis offers something for everyone. It&apos;s a space to learn, compete, collaborate, and grow.
+          Catalysis offers something for everyone. It&apos;s a space to learn,
+          compete, collaborate, and grow.
         </p>
       </div>
     </div>
@@ -93,59 +97,81 @@ const BADGES = [
 ];
 
 const LINES = [
-  { src: "/about/Vector-1.png", top: "23%", left: "-35%", width: 270 },
-  { src: "/about/Vector-2.png", top: "35%", left: "-30%", width: 250 },
-  { src: "/about/Vector-3.png", top: "48%", left: "-30%", width: 180 },
-  { src: "/about/Vector-4.png", top: "53%", left: "-30%", width: 260 },
-  { src: "/about/Vector-5.png", top: "60%", left: "-35%", width: 300 },
+  { src: "/about/Vector-1.png", top: "23%", left: "-35%", widthRatio: 0.55 },
+  { src: "/about/Vector-2.png", top: "35%", left: "-30%", widthRatio: 0.51 },
+  { src: "/about/Vector-3.png", top: "48%", left: "-30%", widthRatio: 0.37 },
+  { src: "/about/Vector-4.png", top: "53%", left: "-30%", widthRatio: 0.53 },
+  { src: "/about/Vector-5.png", top: "60%", left: "-35%", widthRatio: 0.61 },
 ];
 
+/**
+ * AboutRight — fully fluid, nothing gets clipped.
+ *
+ * Strategy:
+ * - The outer wrapper is `w-full` with a fixed aspect ratio (via padding-top trick).
+ * - Everything inside is positioned absolutely using percentage values,
+ *   so it scales 1-to-1 with the container width.
+ * - Badge size is also expressed as a % of the container width (via CSS vars),
+ *   so shape is preserved at every breakpoint.
+ * - overflow-visible on the section; overflow-hidden only on the page wrapper
+ *   where needed — here we just let the section breathe within the grid cell.
+ */
 function AboutRight() {
+  // Badge dimensions as % of container width
+  const BADGE_W = 48; // %  → 240px when container is 500px
+  const BADGE_H_RATIO = 0.583; // height / width  (140/240)
+
   return (
-    <div className="relative w-full h-[600px] flex items-center">
-      <div className="absolute inset-0 z-10">
+    <div className="relative w-full" style={{ paddingTop: "120%" }}>
+      {/* Lines layer */}
+      <div className="absolute inset-0 z-10 pointer-events-none">
         {LINES.map((line, i) => (
           <div
             key={i}
-            className="absolute pointer-events-none"
+            className="absolute"
             style={{
               top: line.top,
               left: line.left,
-              width: `${line.width}px`,
+              width: `${line.widthRatio * 100}%`,
             }}
           >
             <Image
               src={line.src}
               alt="Decorative connection line"
-              width={line.width}
+              width={300}
               height={100}
-              className="object-contain opacity-80 h-auto"
+              className="object-contain opacity-80 h-auto w-full"
             />
           </div>
         ))}
       </div>
-      <div className="relative w-full h-full">
-        {BADGES.map((badge, i) => (
-          <div
-            key={i}
-            className="absolute z-20 transition-transform hover:scale-105"
-            style={{
-              top: badge.top,
-              left: badge.left,
-              width: "240px",
-              height: "140px",
-            }}
-          >
+
+      {/* Badges layer */}
+      {BADGES.map((badge, i) => (
+        <div
+          key={i}
+          className="absolute z-20 mt-13 transition-transform hover:scale-105"
+          style={{
+            top: badge.top,
+            left: badge.left,
+            // width as % of container; height derived to keep ratio
+            width: `${BADGE_W}%`,
+            paddingTop: `${BADGE_W * BADGE_H_RATIO}%`,
+            transform: "translate(-50%, -50%)",
+          }}
+        >
+          {/* Absolutely fill the padding-top box */}
+          <div className="absolute inset-0">
             <Image
               src={badge.src}
               alt={`${badge.label} event badge`}
               fill
-              sizes="240px"
+              sizes="(max-width: 1280px) 30vw, 240px"
               className="object-contain drop-shadow-lg"
             />
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 }
@@ -157,25 +183,30 @@ export default function About() {
       className="relative w-full bg-[#FFEEF0] py-16 md:py-24 overflow-hidden"
     >
       <Container>
-        <div className="block lg:hidden space-y-10">
+        {/* ── Mobile only (< md) ───────────────────────────────────── */}
+        <div className="block md:hidden space-y-10">
           <AboutLeft />
           <AboutMobile />
         </div>
 
-        <div className="hidden lg:grid grid-cols-3 gap-8 items-center">
-          <div className="lg:col-span-1">
+        {/* ── Tablet + Desktop (≥ md) ──────────────────────────────── */}
+        <div className="hidden md:grid grid-cols-3 gap-8 items-center">
+          {/* Left text */}
+          <div className="col-span-1">
             <AboutLeft />
           </div>
+{/* Centre pokeball */}
           <div className="flex justify-center z-20">
             <Image
               src="/hero/Pokeball.png"
               alt="Large Central Pokeball"
               width={250}
               height={250}
-              className="transition-transform hover:scale-105 drop-shadow-2xl h-auto"
+              className="transition-transform hover:scale-105 drop-shadow-2xl h-auto w-full max-w-[120px] md:max-w-[180px] lg:max-w-[250px]"
             />
           </div>
-          <div className="lg:col-span-1">
+          {/* Right badges — fluid, never clips */}
+          <div className="col-span-1 overflow-visible">
             <AboutRight />
           </div>
         </div>

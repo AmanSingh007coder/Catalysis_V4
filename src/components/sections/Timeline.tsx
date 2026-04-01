@@ -60,7 +60,7 @@ const timeline = [
     },
     {
       time: "01:30 - 03:30",
-      title: "Valorant",
+      title: "Clach Royale",
       type: "event",
       pokemon: "wartortle.png",
       description: "Enter the battlefield.",

@@ -165,7 +165,7 @@ export default function Hero() {
       <div className="absolute 
         -top-20 md:-top-25 
         left-1/2 -translate-x-1/2 
-        w-[40px] sm:w-[60px] md:w-[84px] 
+        w-[40px] sm:w-[60px] md:w-[92px] 
         h-[520px] sm:h-[540px] md:h-[600px] 
         bg-white 
         z-0"
