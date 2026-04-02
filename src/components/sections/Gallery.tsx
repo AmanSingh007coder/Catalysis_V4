@@ -32,14 +32,8 @@ interface DesktopRowProps {
   reverse?: boolean;
 }
 
-          <div className="hidden md:grid grid-cols-12 auto-rows-[100px] gap-4">
-
-            <div className="col-span-2 row-span-3 relative rounded-[2rem] overflow-hidden border-2 border-black">
-              <Image src="/gallery/1.jpg" alt="Past event" fill sizes="(min-width: 768px) 16vw, 100vw" className="object-cover" />
-            </div>
-            <div className="col-span-2 row-span-2 relative rounded-[2rem] overflow-hidden border-2 border-black mt-[-40px]">
-              <Image src="/gallery/2.jpg" alt="Coding session" fill sizes="(min-width: 768px) 16vw, 100vw" className="object-cover" />
-            </div>
+function DesktopRow({ images, reverse = false }: DesktopRowProps) {
+  const swiperRef = useRef<SwiperType | null>(null);
 
   return (
     <div className="w-full overflow-hidden group">

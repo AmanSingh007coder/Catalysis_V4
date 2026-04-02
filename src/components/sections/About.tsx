@@ -139,6 +139,16 @@ const LINES: LineData[] = [
 ];
 
 
+const FLOAT_CLASSES: string[] = [
+  "badge-float",
+  "badge-float-rev",
+  "badge-float-slow",
+  "badge-float-slow-rev",
+  "badge-float-fast",
+  "badge-float-fast-rev",
+  "badge-float-med",
+];
+
 function AboutMobile() {
   return (
     <div className="relative w-full h-[320px] flex items-center justify-center">
@@ -250,7 +260,7 @@ function AboutRight() {
       {BADGES.map((badge, i) => (
         <div
           key={i}
-          className="absolute z-20 mt-20 transition-transform hover:scale-105"
+          className={`absolute z-20 mt-20 transition-transform hover:scale-105 ${FLOAT_CLASSES[i % FLOAT_CLASSES.length]}`}
           style={{
             top: badge.top,
             left: badge.left,
